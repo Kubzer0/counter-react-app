@@ -6,7 +6,9 @@ import Counter from './Counter'
 class App extends React.Component {
   render() {
     return (
-      <Counter />
+      <Counter
+      startValue={0}
+      />
     )
   }
 }
