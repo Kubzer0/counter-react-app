@@ -3,13 +3,17 @@ import React from 'react'
 class Counter extends React.Component{
 
     state = {
-        number: '0'
+        number: 0
+    }
+
+    incHandler(){
+        this.setState({number: this.state.number -1})
     }
 
     render(){
         return(
             <div>
-                test
+                {this.state.number}
             </div>
         )
     }
