@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <Counter
-      startValue={0}
+      initialValue={0}
       />
     )
   }
