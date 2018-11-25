@@ -2,8 +2,20 @@ import React from 'react'
 
 class Counter extends React.Component {
 
-    state = {
-        number: this.props.initialValue
+    state = (
+        JSON.parse(localStorage.getItem('counter-state'))
+        || 
+        {
+            number: this.props.initialValue
+        }
+    )
+
+    componentDidUpdate() {
+        this.saveToLocalStorage()
+    }
+
+    saveToLocalStorage() {
+        localStorage.setItem('counter-state', JSON.stringify(this.state))
     }
 
     incByOneHandler() {
@@ -13,8 +25,8 @@ class Counter extends React.Component {
     incByFiveHandler() {
         this.setState({ number: this.state.number + 5 })
     }
-    resetCounter(){
-        this.setState({number: this.props.initialValue})
+    resetCounter() {
+        this.setState({ number: this.props.initialValue })
     }
 
     render() {
