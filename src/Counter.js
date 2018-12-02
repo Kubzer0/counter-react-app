@@ -21,9 +21,14 @@ class Counter extends React.Component {
     incByOneHandler() {
         this.setState({ number: this.state.number + 1 })
     }
-
     incByFiveHandler() {
         this.setState({ number: this.state.number + 5 })
+    }
+    decByOneHandler() {
+        this.setState({ number: this.state.number - 1 })
+    }
+    decByFiveHandler() {
+        this.setState({ number: this.state.number - 5 })
     }
     resetCounter() {
         this.setState({ number: this.props.initialValue })
@@ -44,6 +49,16 @@ class Counter extends React.Component {
                     onClick={() => this.incByFiveHandler()}
                 >
                     Dodaj 5
+                </button>
+                <button
+                    onClick={() => this.decByOneHandler()}
+                >
+                    Odejmij 1
+                </button>
+                <button
+                    onClick={() => this.decByFiveHandler()}
+                >
+                    Odejmij 5
                 </button>
                 <button
                     onClick={() => this.resetCounter()}
